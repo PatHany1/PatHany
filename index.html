@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pat Hany Productions</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+        }
+        #countdown {
+            font-size: 12em; /* Increase font size for the countdown */
+        }
+        .message {
+            display: none;
+            font-size: 2em;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .link {
+            display: none;
+            font-size: 1em;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="countdown">10</h1>
+    <div class="message" id="message">Fuck You.</div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="link" id="link">
+        <a href="https://www.etsy.com/shop/PatHanyMarkets" target="_blank">PatHany.com</a>
+    </div>
+
+    <script>
+        let countdown = 10;
+        const countdownElement = document.getElementById('countdown');
+        const messageElement = document.getElementById('message');
+        const linkElement = document.getElementById('link');
+
+        const timer = setInterval(() => {
+            countdown--;
+            countdownElement.textContent = countdown;
+
+            if (countdown <= 0) {
+                clearInterval(timer);
+                countdownElement.style.display = 'none';
+                messageElement.style.display = 'block';
+                linkElement.style.display = 'block';
+            }
+        }, 2000); // 2000 milliseconds = 2 seconds per tick
+    </script>
+</body>
+</html>
